@@ -15,7 +15,7 @@ def getIcon(name):
     abspath = os.path.dirname(os.path.abspath(__file__)) + "/Icons/"
 
     # JP
-    if ("フブキCh。白上フブキ" in name):
+    if ("フブキ" in name):
         return abspath + "fubuki.jpg"
     elif ("pekora" in name):
         return abspath + "pekora.jpg"
