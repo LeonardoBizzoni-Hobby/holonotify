@@ -7,7 +7,12 @@ def getBlacklist():
     if (os.path.isfile(blacklistFile)):
         with open(blacklistFile, "r") as f:
             for x in f.read().splitlines():
-                blacklist.append(x)
+                if(x == "fubuki" or x == "shirakami"):
+                    blacklist.append("フブキ")
+                elif (x == "akirose" or x == "aki" or x == "rosenthal"):
+                    blacklist.append("アキロゼ")
+                else:
+                    blacklist.append(x)
 
     return blacklist
 
@@ -33,7 +38,7 @@ def getIcon(name):
         return abspath + "miko.jpg"
     elif ("mel" in name):
         return abspath + "mel.jpg"
-    elif ("アキロゼCh。Vtuber/ホロライブ所属" in name):
+    elif ("アキロゼ" in name):
         return abspath + "akirose.jpg"
     elif ("haachama" in name):
         return abspath + "haachama.jpg"
