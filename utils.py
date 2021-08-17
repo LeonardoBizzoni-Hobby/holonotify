@@ -36,7 +36,7 @@ def getIcon(name):
         return abspath + "roboco.jpg"
     elif ("miko" in name):
         return abspath + "miko.jpg"
-    elif ("mel" in name):
+    elif ("夜空メルチャンネル" in name):
         return abspath + "mel.jpg"
     elif ("アキロゼ" in name):
         return abspath + "akirose.jpg"
@@ -120,6 +120,16 @@ def getIcon(name):
         return abspath + "amelia.jpg"
     elif ("irys" in name):
         return abspath + "irys.jpg"
+    elif ("tsukumoto" in name):
+        return abspath + "sana.jpg"
+    elif ("fauna" in name):
+        return abspath + "fauna.jpg"
+    elif ("baelz" in name):
+        return abspath + "baelz.jpg"
+    elif ("nanashi" in name):
+        return abspath + "nanashi.jpg"
+    elif ("kronii" in name):
+        return abspath + "kronii.jpg"
     
     # ID
     elif ("ollie" in name):
