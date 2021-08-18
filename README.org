@@ -1,9 +1,9 @@
 * Introduction to HoloNotify
 HoloNotify is a python script that interacts with the holoAPI to get informations on which vtuber are currently streaming and send a system notifications, using notify-send, to inform the user.
 
-[[https://github.com/LeonardoBizzoni/dotfiles/blob/master/Sun%20%208%20Aug%2014:52:11%20CEST%202021.png]]
+[[https://github.com/LeonardoBizzoni/holonotify/blob/master/Screenshots/Tue%2017%20Aug%2011:50:07%20CEST%202021.png]]
 
 ** Blacklisting vtubers
 You can blacklist a vtuber you don't care about by writing their name in a file called "holoBlacklist" in your .config directory
 
-[[https://github.com/LeonardoBizzoni/dotfiles/blob/master/Sun%20%208%20Aug%2015:04:02%20CEST%202021.png]]
+[[https://github.com/LeonardoBizzoni/holonotify/blob/master/Screenshots/Tue%2017%20Aug%2011:49:46%20CEST%202021.png]]
