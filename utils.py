@@ -94,8 +94,6 @@ def getIcon(name):
         return abspath + "miyabi.jpg"
     elif ("izuru" in name):
         return abspath + "izuru.jpg"
-    elif ("kira" in name):
-        return abspath + "kira.jpg"
     elif ("aruran" in name):
         return abspath + "aruran.jpg"
     elif ("rikka" in name):
