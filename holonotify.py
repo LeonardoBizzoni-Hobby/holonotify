@@ -3,6 +3,7 @@
 import os
 import threading
 import time
+import psutil
 
 import urllib.request
 import json
@@ -21,11 +22,8 @@ def updateValues():
         live = holoapi["live"]
         ended = holoapi["ended"]
 
-    time.sleep(60*5)
-    updateValues()
-
-
 def main():
+    updateValues()
     for ch in live:
         notBlacklist = True
         chName = ch["channel"]["name"].lower()
@@ -43,13 +41,29 @@ def main():
         if(ch["yt_video_key"] in ended):
             liveAnnouced.remove(ch["channel"]["name"])
 
-    time.sleep(60*5)
-
 if __name__ == "__main__":
-    thread = threading.Thread(target=updateValues)
-    thread.start()
+    running = True
+    checkedPs = False
+    psCount = 0
+    blacklist = utils.getBlacklist()
 
-    time.sleep(5)
-    while True:
-        blacklist = utils.getBlacklist()
+    while running:
         main()
+
+        # If there's another instance running, show who's live and quit
+        if checkedPs == False:
+            for pid in psutil.pids():
+                    try:
+                        p = psutil.Process(pid)
+                        if p.name() == "python":
+                            if psCount >= 1:
+                                running = False
+                                break
+                            if "holonotify" in p.cmdline()[1]:
+                                psCount +=  1
+                    except:
+                        continue
+            checkedPs = True
+
+        if running:
+            time.sleep(60*5)
