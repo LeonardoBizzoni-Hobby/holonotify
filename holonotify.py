@@ -16,7 +16,9 @@ ended = list()
 blacklist = list()
 
 def updateValues():
-    global live, ended
+    global live, ended, blacklist
+    blacklist = utils.getBlacklist()
+
     with urllib.request.urlopen("https://api.holotools.app/v1/live") as url:
         holoapi = json.loads(url.read().decode())
         live = holoapi["live"]
@@ -45,7 +47,6 @@ if __name__ == "__main__":
     running = True
     checkedPs = False
     psCount = 0
-    blacklist = utils.getBlacklist()
 
     while running:
         main()

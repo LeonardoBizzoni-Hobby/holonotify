@@ -9,6 +9,8 @@ def getBlacklist():
             for x in f.read().splitlines():
                 if(x == "fubuki" or x == "shirakami"):
                     blacklist.append("フブキ")
+                elif(x == "mel"):
+                    blacklist.append("夜空メルチャンネル")
                 elif (x == "akirose" or x == "aki" or x == "rosenthal"):
                     blacklist.append("アキロゼ")
                 else:
@@ -118,7 +120,7 @@ def getIcon(name):
         return abspath + "amelia.jpg"
     elif ("irys" in name):
         return abspath + "irys.jpg"
-    elif ("tsukumoto" in name):
+    elif ("sana" in name):
         return abspath + "sana.jpg"
     elif ("fauna" in name):
         return abspath + "fauna.jpg"
