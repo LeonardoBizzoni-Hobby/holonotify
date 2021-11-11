@@ -1,5 +1,4 @@
 import os
-import platform
 
 def getBlacklist():
     blacklist = list()
@@ -18,10 +17,7 @@ def getBlacklist():
     return blacklist
 
 def getIcon(name):
-    if(platform.system() == "Windows"):
-        abspath = os.path.dirname(os.path.abspath(__file__)) + "\\Icons\\"
-    else:
-        abspath = os.path.dirname(os.path.abspath(__file__)) + "/Icons/"
+    abspath = os.path.dirname(os.path.abspath(__file__)) + "/Icons/"
 
     # JP
     if ("フブキ" in name):
