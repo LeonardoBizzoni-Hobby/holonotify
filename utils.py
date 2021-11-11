@@ -1,7 +1,9 @@
 import os
+import platform
 
 def getBlacklist():
     blacklist = list()
+    # TODO: path to blacklist on windows
     blacklistFile = os.path.expanduser("~") + "/.config/holoBlacklist"
 
     if (os.path.isfile(blacklistFile)):
@@ -9,17 +11,17 @@ def getBlacklist():
             for x in f.read().splitlines():
                 if(x == "fubuki" or x == "shirakami"):
                     blacklist.append("フブキ")
-                elif(x == "mel"):
-                    blacklist.append("夜空メルチャンネル")
                 elif (x == "akirose" or x == "aki" or x == "rosenthal"):
                     blacklist.append("アキロゼ")
                 else:
                     blacklist.append(x)
-
     return blacklist
 
 def getIcon(name):
-    abspath = os.path.dirname(os.path.abspath(__file__)) + "/Icons/"
+    if(platform.system() == "Windows"):
+        abspath = os.path.dirname(os.path.abspath(__file__)) + "\\Icons\\"
+    else:
+        abspath = os.path.dirname(os.path.abspath(__file__)) + "/Icons/"
 
     # JP
     if ("フブキ" in name):
@@ -85,7 +87,7 @@ def getIcon(name):
     elif ("botan" in name):
         return abspath + "botan.jpg"
 
-    # JP col cazzo
+    # JP males
     elif ("shien" in name):
         return abspath + "shien.jpg"
     elif ("oga" in name):
@@ -120,7 +122,7 @@ def getIcon(name):
         return abspath + "amelia.jpg"
     elif ("irys" in name):
         return abspath + "irys.jpg"
-    elif ("sana" in name):
+    elif ("tsukumoto" in name):
         return abspath + "sana.jpg"
     elif ("fauna" in name):
         return abspath + "fauna.jpg"
