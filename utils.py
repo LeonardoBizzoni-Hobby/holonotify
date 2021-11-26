@@ -83,6 +83,17 @@ def getIcon(name):
     elif ("botan" in name):
         return abspath + "botan.jpg"
 
+    elif ("laplus" in name):
+        return abspath + "laplus.jpg"
+    elif ("lui" in name):
+        return abspath + "lui.jpg"
+    elif ("koyori" in name):
+        return abspath + "koyori.jpg"
+    elif ("chloe" in name):
+        return abspath + "chloe.jpg"
+    elif ("iroha" in name):
+        return abspath + "iroha.jpg"
+
     # JP males
     elif ("shien" in name):
         return abspath + "shien.jpg"
